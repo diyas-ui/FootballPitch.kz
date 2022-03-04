@@ -1,0 +1,6 @@
+framework module Pods_FootballPitch_kz {
+  umbrella header "Pods-FootballPitch.kz-umbrella.h"
+
+  export *
+  module * { export * }
+}
