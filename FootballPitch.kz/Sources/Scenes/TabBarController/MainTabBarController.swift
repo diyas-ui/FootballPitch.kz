@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
                 
         edgesForExtendedLayout = []
         extendedLayoutIncludesOpaqueBars = true
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.white
         self.selectedIndex = 0
         
         self.delegate = self
@@ -74,12 +74,13 @@ extension MainTabBarController {
         menuVC.tabBarItem = UITabBarItem(title: "Menu", image: #imageLiteral(resourceName: "gallery").withRenderingMode(.alwaysTemplate), tag: 3)
         let menuNC = UINavigationController(rootViewController: menuVC)
 
-        self.tabBar.tintColor = UIColor.lightGray
+        tabBar.tintColor = UIColor.lightGray
+        tabBar.backgroundColor = UIColor.white
         
-        self.tabBar.itemPositioning = .fill
+        tabBar.itemPositioning = .fill
         
         let controllers = [mainNC, productNC, basketNC, menuNC]
-        self.viewControllers = controllers
+        viewControllers = controllers
     }
 
 }
