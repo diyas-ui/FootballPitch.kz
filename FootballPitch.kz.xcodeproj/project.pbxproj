@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
+		04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F827ECC54500D5A671 /* MainPageView.swift */; };
 		41C569B20E915EF57F86E28F /* Pods_FootballPitch_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */; };
 		9B626976268A0277009AE471 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626975268A0276009AE471 /* Constants.swift */; };
 		9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626980268A0675009AE471 /* SecondViewModel.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04DE94F427ECC39900D5A671 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04DE94F827ECC54500D5A671 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		0B70290683BD35397A9FC8F0 /* Pods-IShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.release.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.release.xcconfig"; sourceTree = "<group>"; };
 		0EA64BA6D68E8978975B01BA /* Pods-FootballPitch.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.debug.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.debug.xcconfig"; sourceTree = "<group>"; };
 		2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballPitch_kz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04DE94F327ECC36600D5A671 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				04DE94F627ECC3A600D5A671 /* ViewController */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		04DE94F627ECC3A600D5A671 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04DE94F427ECC39900D5A671 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04DE94F727ECC52D00D5A671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DE94F827ECC54500D5A671 /* MainPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		91A620B255CEA5F10D2F3023 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +176,7 @@
 			children = (
 				9B6C58E92684A63800EFD5B2 /* TabBarController */,
 				9B6C58EA2684A71200EFD5B2 /* Second */,
+				04DE94F327ECC36600D5A671 /* LoginPage */,
 				9BBE41A62691E9A1008E0E97 /* MainPage */,
 			);
 			path = Scenes;
@@ -243,6 +272,7 @@
 		9BBE41A62691E9A1008E0E97 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				04DE94F727ECC52D00D5A671 /* View */,
 				9BBE41AA2691EA7B008E0E97 /* ViewModel */,
 				9BBE41AB2691EAA0008E0E97 /* ViewController */,
 			);
@@ -390,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */,
 				9B6C58FF2684A7AE00EFD5B2 /* UIViewController+Extension.swift in Sources */,
 				9B626976268A0277009AE471 /* Constants.swift in Sources */,
 				9BBE419D2691E63F008E0E97 /* Palette.swift in Sources */,
@@ -411,6 +442,7 @@
 				9B743B0A268203680029FA38 /* SecondVC.swift in Sources */,
 				9B743ADB2681D35F0029FA38 /* AppDelegate.swift in Sources */,
 				9B6C590E2684A80200EFD5B2 /* UITextField+Extension.swift in Sources */,
+				04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */,
 				9B6C59172684A8FC00EFD5B2 /* BaseViewController.swift in Sources */,
 				9B6C59052684A7C000EFD5B2 /* String+Extension.swift in Sources */,
 				9BBE419A2691E5D1008E0E97 /* BaseController.swift in Sources */,

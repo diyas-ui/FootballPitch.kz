@@ -13,11 +13,21 @@ target 'FootballPitch.kz' do
   # UI
   pod 'SnapKit'
   pod 'SVProgressHUD'
+  pod 'MaterialComponents/TextControls+FilledTextAreas'
+  pod 'MaterialComponents/TextControls+FilledTextFields'
+  pod 'MaterialComponents/TextControls+OutlinedTextAreas'
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'SwiftLint'
 
   # Utility
   pod 'Kingfisher'
 
   # Calendar
-  pod 'JTAppleCalendar' 
+  pod 'JTAppleCalendar'
+
+  # Firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/RemoteConfig'
 
 end
