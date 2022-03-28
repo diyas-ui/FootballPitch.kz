@@ -17,17 +17,11 @@ target 'FootballPitch.kz' do
   pod 'MaterialComponents/TextControls+FilledTextFields'
   pod 'MaterialComponents/TextControls+OutlinedTextAreas'
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
-  pod 'SwiftLint'
 
   # Utility
   pod 'Kingfisher'
 
   # Calendar
   pod 'JTAppleCalendar'
-
-  # Firebase
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/RemoteConfig'
 
 end
