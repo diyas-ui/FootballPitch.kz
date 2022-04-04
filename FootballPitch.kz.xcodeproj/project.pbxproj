@@ -39,6 +39,7 @@
 		9BBE41A42691E999008E0E97 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41A32691E999008E0E97 /* MainVC.swift */; };
 		9BBE41A82691EA06008E0E97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41A72691EA06008E0E97 /* MainViewModel.swift */; };
 		9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41AD2691EC30008E0E97 /* Parameters.swift */; };
+		FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		9BBE41AD2691EC30008E0E97 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		A461B32589602972EEC29DD4 /* Pods-IShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.debug.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4354B2368A087BD0343D6A /* Pods-FootballPitch.kz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.release.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.release.xcconfig"; sourceTree = "<group>"; };
+		FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		9B6C58EB2684A71A00EFD5B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA9B6027FB5C3A0005289B /* Onboarding */,
 				9B6C58E92684A63800EFD5B2 /* TabBarController */,
 				9B6C58EA2684A71200EFD5B2 /* Second */,
 				04DE94F327ECC36600D5A671 /* LoginPage */,
@@ -306,6 +309,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FFFA9B6027FB5C3A0005289B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA9B6127FB5CB10005289B /* ViewController */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FFFA9B6127FB5CB10005289B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -433,6 +452,7 @@
 				9B6C59112684A85700EFD5B2 /* Date+String+Extension.swift in Sources */,
 				9BBE418F2691D866008E0E97 /* Data+Extension.swift in Sources */,
 				9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */,
+				FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */,
 				9B6C590B2684A7E100EFD5B2 /* UIFont+Extension.swift in Sources */,
 				9B6C59142684A87F00EFD5B2 /* UIStackView+Extension.swift in Sources */,
 				9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */,
