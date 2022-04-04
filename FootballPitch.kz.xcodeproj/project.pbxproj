@@ -10,6 +10,10 @@
 		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
 		04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F827ECC54500D5A671 /* MainPageView.swift */; };
 		41C569B20E915EF57F86E28F /* Pods_FootballPitch_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */; };
+		4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */; };
+		4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */; };
+		4A968DCB27F1F38E003085CB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */; };
+		4A968DCC27F1F38E003085CB /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC827F1F38E003085CB /* Poppins-Bold.ttf */; };
 		9B626976268A0277009AE471 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626975268A0276009AE471 /* Constants.swift */; };
 		9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626980268A0675009AE471 /* SecondViewModel.swift */; };
 		9B6C58E32684A40A00EFD5B2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C58E22684A40A00EFD5B2 /* MainTabBarController.swift */; };
@@ -48,6 +52,10 @@
 		0B70290683BD35397A9FC8F0 /* Pods-IShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.release.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.release.xcconfig"; sourceTree = "<group>"; };
 		0EA64BA6D68E8978975B01BA /* Pods-FootballPitch.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.debug.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.debug.xcconfig"; sourceTree = "<group>"; };
 		2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballPitch_kz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		4A968DC827F1F38E003085CB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		9B626975268A0276009AE471 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B626980268A0675009AE471 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		9B6C58E22684A40A00EFD5B2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -118,6 +126,17 @@
 				04DE94F827ECC54500D5A671 /* MainPageView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4A968DCD27F1F395003085CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A968DC827F1F38E003085CB /* Poppins-Bold.ttf */,
+				4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */,
+				4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */,
+				4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		91A620B255CEA5F10D2F3023 /* Frameworks */ = {
@@ -248,6 +267,7 @@
 		9B743AD92681D35F0029FA38 /* FootballPitch.kz */ = {
 			isa = PBXGroup;
 			children = (
+				4A968DCD27F1F395003085CB /* Fonts */,
 				9B743AE82681D3610029FA38 /* Info.plist */,
 				9B6C58E52684A5E600EFD5B2 /* Resources */,
 				9B6C58E72684A62300EFD5B2 /* Sources */,
@@ -384,7 +404,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */,
 				9B743AE72681D3610029FA38 /* LaunchScreen.storyboard in Resources */,
+				4A968DCC27F1F38E003085CB /* Poppins-Bold.ttf in Resources */,
+				4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */,
+				4A968DCB27F1F38E003085CB /* Poppins-Regular.ttf in Resources */,
 				9B743AE42681D3610029FA38 /* Assets.xcassets in Resources */,
 				9BBE41A12691E6B9008E0E97 /* Color.xcassets in Resources */,
 			);
