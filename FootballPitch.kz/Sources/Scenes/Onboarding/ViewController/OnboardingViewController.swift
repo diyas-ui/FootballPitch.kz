@@ -26,7 +26,7 @@ class OnboardingViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.backgroundColor = UIColor.palette(.accent)
-//      button.addTarget(self, action: #selector(), for: .touchUpInside)
+      button.addTarget(self, action: #selector(openLoginPage), for: .touchUpInside)
         let attributedText = NSMutableAttributedString()
                     attributedText.append(NSAttributedString(
                         string: "Login",
@@ -40,7 +40,7 @@ class OnboardingViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Sign up by phone number", for: .normal)
         button.tintColor = UIColor.palette(.accent)
-//      button.addTarget(self, action: #selector(), for: .touchUpInside)
+      button.addTarget(self, action: #selector(openRegistationPage), for: .touchUpInside)
         return button
     }()
     
@@ -79,11 +79,10 @@ class OnboardingViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+
         createArrOfStructs()
         setupViews()
-        // Do any additional setup after loading the view.
     }
-
 }
 
 extension OnboardingViewController {
@@ -105,6 +104,21 @@ extension OnboardingViewController {
 }
             
 // MARK: - Actions
+extension OnboardingViewController {
+    @objc
+    private func openLoginPage() {
+        let loginVC = LoginViewController(with: .login)
+        present(loginVC, animated: true)
+        loginVC.modalPresentationStyle = .fullScreen
+    }
+    
+    @objc
+    private func openRegistationPage() {
+        let loginVC = LoginViewController(with: .register)
+        present(loginVC, animated: true)
+        loginVC.modalPresentationStyle = .fullScreen
+    }
+}
 
 // MARK: - UICollectionView
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {

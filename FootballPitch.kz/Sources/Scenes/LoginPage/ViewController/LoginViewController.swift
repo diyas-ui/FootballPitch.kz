@@ -150,7 +150,7 @@ extension LoginViewController: CodeDesignable {
             fillWindowView.titleString = "Login"
             fillWindowView.isSecurityKeyboard = true
             fillWindowView.titleButtonString = "Log in"
-            fillWindowView.setupConstraints()
+            fillWindowView.isHiddenForgotPassword = false
             
             let attributedText = NSMutableAttributedString()
             attributedText.append(NSAttributedString(
@@ -172,6 +172,7 @@ extension LoginViewController: CodeDesignable {
             fillWindowView.secondTextPlaceholder = "+7(7XX)XXX-XX-XX"
             fillWindowView.titleString = "Sign Up"
             fillWindowView.isHiddenForgotPassword = true
+            fillWindowView.isSecurityKeyboard = false
             fillWindowView.titleButtonString = "Sign Up"
             fillWindowView.remakeConstraints()
             
@@ -187,8 +188,7 @@ extension LoginViewController: CodeDesignable {
             bottomLabel.attributedText = attributedText
             bottomLabel.textAlignment = .center
         }
-        
-        
+
         bottomLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(transitionHandler))
         bottomLabel.addGestureRecognizer(tapGesture)

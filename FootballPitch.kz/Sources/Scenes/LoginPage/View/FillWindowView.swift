@@ -68,12 +68,7 @@ class FillWindowView: UIView {
         }
     }
 
-    private let containerView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 14
-
-        return view
-    }()
+    private let containerView = StandardShadowView()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -185,8 +180,6 @@ extension FillWindowView: CodeDesignable {
             make.height.equalTo(48)
             make.bottom.equalToSuperview().inset(32)
         }
-        
-        setupShadowView()
     }
     
     func remakeConstraints() {
@@ -196,13 +189,5 @@ extension FillWindowView: CodeDesignable {
             make.height.equalTo(48)
             make.bottom.equalToSuperview().inset(32)
         }
-    }
-    
-    
-    func setupShadowView() {
-        containerView.layer.shadowOpacity = 1
-        containerView.layer.shadowRadius = 10
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        containerView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     }
 }
