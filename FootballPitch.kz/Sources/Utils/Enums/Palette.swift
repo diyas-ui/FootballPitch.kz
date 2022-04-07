@@ -8,41 +8,22 @@
 import UIKit
 
 enum Palette: String {
+    case accent
+    case primaryDark
+    case success
+    case warning
     case white
-    case black
-    case mainColor
-    case primary
-    case midGrey
-    case shadowColor
-    case monoGray3
     case error
+    case textPrimary
+    case textSecondary
+    case textSecondaryBlack
+    case lightGreen
+    case lightGrey
     
-    case red900
-    case red600
-    case red500
-    case red300
-    case red100
-    
-    case green600
-    case green500
-    case green100
-    case green50
-    
-    case blue100
-    
-    case yellow600
-    case yellow500
-    case yellow300
-    case yellow50
-        
-    case gray900
-    case gray800
-    case gray500
-    case gray400
-    case gray300
-    case gray200
-    case gray100
-    case gray50
+    case black900
+    case black800
+    case black700
+    case black600
     
     var color: UIColor {
         return UIColor(named: rawValue, in: .main, compatibleWith: nil)!

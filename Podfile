@@ -13,11 +13,15 @@ target 'FootballPitch.kz' do
   # UI
   pod 'SnapKit'
   pod 'SVProgressHUD'
+  pod 'MaterialComponents/TextControls+FilledTextAreas'
+  pod 'MaterialComponents/TextControls+FilledTextFields'
+  pod 'MaterialComponents/TextControls+OutlinedTextAreas'
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
 
   # Utility
   pod 'Kingfisher'
 
   # Calendar
-  pod 'JTAppleCalendar' 
+  pod 'JTAppleCalendar'
 
 end
