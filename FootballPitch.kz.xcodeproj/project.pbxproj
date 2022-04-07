@@ -14,6 +14,9 @@
 		4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */; };
 		4A968DCB27F1F38E003085CB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */; };
 		4A968DCC27F1F38E003085CB /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC827F1F38E003085CB /* Poppins-Bold.ttf */; };
+		4AA78DB627FF67E100EC787D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA78DB527FF67E100EC787D /* SearchTextField.swift */; };
+		4AA78DB827FF796600EC787D /* MainPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA78DB727FF796600EC787D /* MainPageCell.swift */; };
+		4AA78DBA27FF7EA500EC787D /* FieldsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA78DB927FF7EA500EC787D /* FieldsModel.swift */; };
 		9B626976268A0277009AE471 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626975268A0276009AE471 /* Constants.swift */; };
 		9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B626980268A0675009AE471 /* SecondViewModel.swift */; };
 		9B6C58E32684A40A00EFD5B2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C58E22684A40A00EFD5B2 /* MainTabBarController.swift */; };
@@ -55,6 +58,9 @@
 		4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		4A968DC827F1F38E003085CB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		4AA78DB527FF67E100EC787D /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		4AA78DB727FF796600EC787D /* MainPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCell.swift; sourceTree = "<group>"; };
+		4AA78DB927FF7EA500EC787D /* FieldsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsModel.swift; sourceTree = "<group>"; };
 		9B626975268A0276009AE471 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B626980268A0675009AE471 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		9B6C58E22684A40A00EFD5B2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				04DE94F827ECC54500D5A671 /* MainPageView.swift */,
+				4AA78DB727FF796600EC787D /* MainPageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +142,14 @@
 				4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4AA78DBB27FF839700EC787D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AA78DB927FF7EA500EC787D /* FieldsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		91A620B255CEA5F10D2F3023 /* Frameworks */ = {
@@ -239,6 +254,7 @@
 			children = (
 				9B6C59162684A8FC00EFD5B2 /* BaseViewController.swift */,
 				9BBE41992691E5D1008E0E97 /* BaseController.swift */,
+				4AA78DB527FF67E100EC787D /* SearchTextField.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -295,6 +311,7 @@
 				04DE94F727ECC52D00D5A671 /* View */,
 				9BBE41AA2691EA7B008E0E97 /* ViewModel */,
 				9BBE41AB2691EAA0008E0E97 /* ViewController */,
+				4AA78DBB27FF839700EC787D /* Model */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -445,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */,
+				4AA78DB827FF796600EC787D /* MainPageCell.swift in Sources */,
 				9B6C58FF2684A7AE00EFD5B2 /* UIViewController+Extension.swift in Sources */,
 				9B626976268A0277009AE471 /* Constants.swift in Sources */,
 				9BBE419D2691E63F008E0E97 /* Palette.swift in Sources */,
@@ -467,7 +485,9 @@
 				9B743ADB2681D35F0029FA38 /* AppDelegate.swift in Sources */,
 				9B6C590E2684A80200EFD5B2 /* UITextField+Extension.swift in Sources */,
 				04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */,
+				4AA78DBA27FF7EA500EC787D /* FieldsModel.swift in Sources */,
 				9B6C59172684A8FC00EFD5B2 /* BaseViewController.swift in Sources */,
+				4AA78DB627FF67E100EC787D /* SearchTextField.swift in Sources */,
 				9B6C59052684A7C000EFD5B2 /* String+Extension.swift in Sources */,
 				9BBE419A2691E5D1008E0E97 /* BaseController.swift in Sources */,
 				9B6C58ED2684A75600EFD5B2 /* UITableView+Extension.swift in Sources */,

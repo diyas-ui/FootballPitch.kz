@@ -18,7 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = MainTabBarController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
+        
+        setupNavigationBar()
                 
         return true
+    }
+    
+    func setupNavigationBar() {
+        UINavigationBar.appearance().backgroundColor = .palette(.accent)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.regularPoppins(18), NSAttributedString.Key.foregroundColor : UIColor.palette(.white)]
+        
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().tintColor = .palette(.white)
+    
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "left_arrow")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "left_arrow")
     }
 }

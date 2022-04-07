@@ -54,32 +54,32 @@ extension MainTabBarController {
     
     func configUI() {
        
-        let mainVC = SecondVC()
-        mainVC.title = "Main"
-        mainVC.tabBarItem = UITabBarItem(title: "Main", image: #imageLiteral(resourceName: "gallery").withRenderingMode(.alwaysTemplate), tag: 0)
+        let mainVC = MainVC()
+        mainVC.title = ""
+        mainVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_fields_icon").withRenderingMode(.alwaysTemplate), tag: 0)
         let mainNC = UINavigationController(rootViewController: mainVC)
     
-        let productVC = SecondVC()
-        productVC.tabBarItem = UITabBarItem(title: "Pitch", image: #imageLiteral(resourceName: "gallery").withRenderingMode(.alwaysTemplate), tag: 1)
-        productVC.title = "Pitch"
-        let productNC = UINavigationController(rootViewController: productVC)
+        let playersVC = SecondVC()
+        playersVC.title = "Players"
+        playersVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_players_icon").withRenderingMode(.alwaysTemplate), tag: 1)
+        let playersNC = UINavigationController(rootViewController: playersVC)
 
-        let basketVC = SecondVC()
-        basketVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "gallery").withRenderingMode(.alwaysTemplate), tag: 2)
-        basketVC.title = "Profile"
-        let basketNC = UINavigationController(rootViewController: basketVC)
+        let mapVC = SecondVC()
+        mapVC.title = "Map"
+        mapVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_location_icon").withRenderingMode(.alwaysTemplate), tag: 2)
+        let mapNC = UINavigationController(rootViewController: mapVC)
 
-        let menuVC = SecondVC()
-        menuVC.title = "Menu"
-        menuVC.tabBarItem = UITabBarItem(title: "Menu", image: #imageLiteral(resourceName: "gallery").withRenderingMode(.alwaysTemplate), tag: 3)
-        let menuNC = UINavigationController(rootViewController: menuVC)
+        let profileVC = SecondVC()
+        profileVC.title = "Profile"
+        profileVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_profile_icon").withRenderingMode(.alwaysTemplate), tag: 3)
+        let profileNC = UINavigationController(rootViewController: profileVC)
 
-        tabBar.tintColor = UIColor.lightGray
-        tabBar.backgroundColor = UIColor.white
+        tabBar.tintColor = .palette(.accent)
+        tabBar.backgroundColor = .palette(.white)
         
         tabBar.itemPositioning = .fill
         
-        let controllers = [mainNC, productNC, basketNC, menuNC]
+        let controllers = [mainNC, playersNC, mapNC, profileNC]
         viewControllers = controllers
     }
 
