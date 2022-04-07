@@ -5,6 +5,7 @@
 //  Created by Akzhol Imangazin on 6/24/21.
 //
 
+import Foundation
 import UIKit
 
 extension UIView {
@@ -28,6 +29,16 @@ extension UIView {
         self.layer.mask = rectShape
     }
     
+    func roundByCorners(corners: UIRectCorner, radius: CGFloat) {
+        DispatchQueue.main.async {
+            let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = self.bounds
+            maskLayer.path = path.cgPath
+            self.layer.mask = maskLayer
+        }
+    }
+    
     public func addBackgroundImage(_ image: UIImage) {
         UIGraphicsBeginImageContext(self.frame.size)
         image.draw(in: self.bounds)
@@ -39,14 +50,16 @@ extension UIView {
 }
 
 extension UIView {
-    func roundByCorners(corners: UIRectCorner, radius: CGFloat) {
-        DispatchQueue.main.async {
-            let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            let maskLayer = CAShapeLayer()
-            maskLayer.frame = self.bounds
-            maskLayer.path = path.cgPath
-            self.layer.mask = maskLayer
-        }
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = .palette(.black900)
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 10
+        
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
 

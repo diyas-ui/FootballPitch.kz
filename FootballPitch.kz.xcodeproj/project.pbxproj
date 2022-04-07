@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD35FD27F359BB000BCE28 /* FillWindowView.swift */; };
 		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
 		04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F827ECC54500D5A671 /* MainPageView.swift */; };
+		04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */; };
 		41C569B20E915EF57F86E28F /* Pods_FootballPitch_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */; };
 		4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */; };
 		4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */; };
@@ -46,11 +48,17 @@
 		9BBE41A42691E999008E0E97 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41A32691E999008E0E97 /* MainVC.swift */; };
 		9BBE41A82691EA06008E0E97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41A72691EA06008E0E97 /* MainViewModel.swift */; };
 		9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41AD2691EC30008E0E97 /* Parameters.swift */; };
+		FFBF39A027FF683C00E461FD /* OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */; };
+		FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */; };
+		FFFA9B6827FB68170005289B /* CodeDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6727FB68170005289B /* CodeDesignableView.swift */; };
+		FFFA9B6A27FB68410005289B /* StandardShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6927FB68410005289B /* StandardShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CD35FD27F359BB000BCE28 /* FillWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillWindowView.swift; sourceTree = "<group>"; };
 		04DE94F427ECC39900D5A671 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04DE94F827ECC54500D5A671 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginAndRegisterHeaderView.swift; path = FootballPitch.kz/Sources/Scenes/MainPage/View/LoginAndRegisterHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		0B70290683BD35397A9FC8F0 /* Pods-IShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.release.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.release.xcconfig"; sourceTree = "<group>"; };
 		0EA64BA6D68E8978975B01BA /* Pods-FootballPitch.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.debug.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.debug.xcconfig"; sourceTree = "<group>"; };
 		2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballPitch_kz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +102,10 @@
 		9BBE41AD2691EC30008E0E97 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		A461B32589602972EEC29DD4 /* Pods-IShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.debug.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4354B2368A087BD0343D6A /* Pods-FootballPitch.kz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.release.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.release.xcconfig"; sourceTree = "<group>"; };
+		FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewCell.swift; sourceTree = "<group>"; };
+		FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FFFA9B6727FB68170005289B /* CodeDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDesignableView.swift; sourceTree = "<group>"; };
+		FFFA9B6927FB68410005289B /* StandardShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,7 @@
 		04DE94F327ECC36600D5A671 /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
+				04DE94FB27F20B3700D5A671 /* View */,
 				04DE94F627ECC3A600D5A671 /* ViewController */,
 			);
 			path = LoginPage;
@@ -129,6 +142,15 @@
 			children = (
 				04DE94F827ECC54500D5A671 /* MainPageView.swift */,
 				4AA78DB727FF796600EC787D /* MainPageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DE94FB27F20B3700D5A671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */,
+				04CD35FD27F359BB000BCE28 /* FillWindowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +230,7 @@
 		9B6C58EB2684A71A00EFD5B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA9B6027FB5C3A0005289B /* Onboarding */,
 				9B6C58E92684A63800EFD5B2 /* TabBarController */,
 				9B6C58EA2684A71200EFD5B2 /* Second */,
 				04DE94F327ECC36600D5A671 /* LoginPage */,
@@ -219,6 +242,7 @@
 		9B6C58F02684A75A00EFD5B2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA9B6627FB67F00005289B /* Views */,
 				9B626975268A0276009AE471 /* Constants.swift */,
 				9BBE41972691D946008E0E97 /* Protocols */,
 				9BBE419F2691E644008E0E97 /* Enums */,
@@ -341,6 +365,40 @@
 				ED4354B2368A087BD0343D6A /* Pods-FootballPitch.kz.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FFBF399E27FF682600E461FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FFFA9B6027FB5C3A0005289B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FFBF399E27FF682600E461FD /* Cells */,
+				FFFA9B6127FB5CB10005289B /* ViewController */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FFFA9B6127FB5CB10005289B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FFFA9B6627FB67F00005289B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFFA9B6727FB68170005289B /* CodeDesignableView.swift */,
+				FFFA9B6927FB68410005289B /* StandardShadowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,11 +529,17 @@
 				9B6C59082684A7DA00EFD5B2 /* UIColor+Extension.swift in Sources */,
 				9BBE41922691D886008E0E97 /* Dictionary+Extension.swift in Sources */,
 				9B6C59022684A7B600EFD5B2 /* UIView+Extension.swift in Sources */,
+				04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */,
 				9B6C58FC2684A79300EFD5B2 /* UIImageView+Extension.swift in Sources */,
+				FFFA9B6A27FB68410005289B /* StandardShadowView.swift in Sources */,
 				9B6C59112684A85700EFD5B2 /* Date+String+Extension.swift in Sources */,
+				04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */,
 				9BBE418F2691D866008E0E97 /* Data+Extension.swift in Sources */,
 				9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */,
+				FFFA9B6827FB68170005289B /* CodeDesignableView.swift in Sources */,
+				FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */,
 				9B6C590B2684A7E100EFD5B2 /* UIFont+Extension.swift in Sources */,
+				FFBF39A027FF683C00E461FD /* OnboardingViewCell.swift in Sources */,
 				9B6C59142684A87F00EFD5B2 /* UIStackView+Extension.swift in Sources */,
 				9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */,
 				9B6C58F92684A78600EFD5B2 /* UILabel+Extension.swift in Sources */,
