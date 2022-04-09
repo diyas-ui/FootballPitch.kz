@@ -68,9 +68,14 @@ extension LoginViewController {
     private func transitionHandler() {
         switch type {
         case .login:
-            type = .register
+            let registrationVC = LoginViewController(with: .register)
+            present(registrationVC, animated: true)
+            registrationVC.modalPresentationStyle = .overCurrentContext
+
         case .register:
-            type = .login
+            let loginVC = LoginViewController(with: .login)
+            present(loginVC, animated: true)
+            loginVC.modalPresentationStyle = .fullScreen
         }
 
         setupViews()
@@ -168,8 +173,8 @@ extension LoginViewController: CodeDesignable {
         case .register:
             fillWindowView.firstTextString = "Full name"
             fillWindowView.firstTextPlaceholder = ""
-            fillWindowView.secondTextString = "Phone Number"
-            fillWindowView.secondTextPlaceholder = "+7(7XX)XXX-XX-XX"
+            fillWindowView.secondTextString = "Email"
+            fillWindowView.secondTextPlaceholder = "example@gmail.com"
             fillWindowView.titleString = "Sign Up"
             fillWindowView.isHiddenForgotPassword = true
             fillWindowView.isSecurityKeyboard = false
