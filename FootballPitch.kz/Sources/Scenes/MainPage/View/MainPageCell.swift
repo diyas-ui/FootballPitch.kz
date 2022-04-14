@@ -115,6 +115,7 @@ class MainPageCell: UITableViewCell {
 //MARK: - CodeDesignable
 extension MainPageCell: CodeDesignable {
     func setupViews() {
+        selectionStyle = .none
         backgroundColor = .clear
         
         addSubview(containerView)

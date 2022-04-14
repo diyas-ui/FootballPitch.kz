@@ -11,6 +11,7 @@ import MaterialComponents
 import UIKit
 
 class FillWindowView: UIView {
+    public var enterClicked: (() -> Void)?
 
     var titleString: String? {
         didSet {
@@ -111,6 +112,7 @@ class FillWindowView: UIView {
         button.setTitleColor(.palette(.white), for: .normal)
         button.backgroundColor = .palette(.accent)
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(handleEnterButton), for: .touchUpInside)
 
         return button
     }()
@@ -123,6 +125,15 @@ class FillWindowView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//MARK: - Action
+extension FillWindowView {
+    @objc private func handleEnterButton() {
+        if let enterClicked = enterClicked {
+            enterClicked()
+        }
     }
 }
 
