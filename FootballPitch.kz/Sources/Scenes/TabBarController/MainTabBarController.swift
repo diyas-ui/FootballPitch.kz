@@ -70,7 +70,7 @@ extension MainTabBarController {
         let mapNC = UINavigationController(rootViewController: mapVC)
 
         let profileVC = ProfileViewController()
-        profileVC.title = "Profile"
+        profileVC.title = ""
         profileVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_profile_icon").withRenderingMode(.alwaysTemplate), tag: 3)
         let profileNC = UINavigationController(rootViewController: profileVC)
 

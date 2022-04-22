@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    
     // MARK: - UI Elements
     fileprivate var topView = UIView()
     fileprivate lazy var savedView = StandardShadowView()
@@ -93,49 +92,33 @@ class ProfileViewController: UIViewController {
         return stackView
     }()
     
-    
-    
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .regularPoppins(18)
+        label.font = .semiboldPoppins(24)
         label.textColor = .palette(.white)
         label.text = "My Profile"
         return label
-    }()
-    
-    fileprivate lazy var exitButton: UIButton = {
-        let button = UIButton()
-//        button.addTarget(self, action: #selector(), for: .touchUpInside)
-        if let image = UIImage(named: "exit_icon") {
-            button.setImage(image, for: .normal)
-        }
-        return button
-    }()
-    
-    fileprivate lazy var topStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, exitButton])
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .top
-        return stackView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupViews()
     }
     
 }
 
+//MARK: - Actions
+extension ProfileViewController {
+    @objc func exitClicked() {
+        print(#function)
+    }
+}
+
 extension ProfileViewController: CodeDesignable {
     
     func setupViews() {
-        
-        [topStackView, mainStackView].forEach {
-            topView.addSubview($0)
-        }
+        topView.addSubview(mainStackView)
         
         [savedIconView, savedTitleLabel, savedRightArrowImage].forEach {
             savedView.addSubview($0)
@@ -145,15 +128,20 @@ extension ProfileViewController: CodeDesignable {
             editView.addSubview($0)
         }
         
-//        topView.addSubviews(topStackView, mainStackView)
         view.backgroundColor = .palette(.white)
         
         [topView, savedView, editView].forEach {
             view.addSubview($0)
         }
-//        view.addSubview(topView)
+
         setupTopView()
+        setupNavigationBar()
         setupConstraints()
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "exit_icon"), style: .plain, target: self, action: #selector(exitClicked))
     }
     
     func setupConstraints() {
@@ -161,7 +149,7 @@ extension ProfileViewController: CodeDesignable {
         topView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.right.left.equalToSuperview()
-            $0.height.equalTo(252)
+            $0.height.equalTo(208)
         }
         
         savedView.snp.makeConstraints {
@@ -214,20 +202,14 @@ extension ProfileViewController: CodeDesignable {
             $0.bottom.equalToSuperview()
         }
         
-        topStackView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(25)
-            $0.left.right.equalToSuperview().inset(25)
-        }
-        
         mainStackView.snp.makeConstraints {
-            $0.top.equalTo(topStackView.snp.bottom).offset(25)
+            $0.top.equalToSuperview().offset(25)
             $0.centerX.equalToSuperview()
         }
     }
+    
     func setupTopView() {
         topView.backgroundColor = .palette(.accent)
         topView.roundByCorners(corners: [.bottomRight, .bottomLeft], radius: 16.0)
     }
-    
-    
 }
