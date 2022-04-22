@@ -9,6 +9,7 @@ import Foundation
 import SnapKit
 import MaterialComponents
 import UIKit
+import SwiftUI
 
 class FillWindowView: UIView {
 
@@ -111,6 +112,7 @@ class FillWindowView: UIView {
         button.setTitleColor(.palette(.white), for: .normal)
         button.backgroundColor = .palette(.accent)
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
 
         return button
     }()
@@ -123,6 +125,14 @@ class FillWindowView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Methods
+extension FillWindowView {
+    
+    @objc func buttonClicked() {
+        self.window?.rootViewController = MainTabBarController()
     }
 }
 
