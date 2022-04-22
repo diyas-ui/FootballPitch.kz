@@ -49,6 +49,7 @@
 		9BBE41A82691EA06008E0E97 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41A72691EA06008E0E97 /* MainViewModel.swift */; };
 		9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE41AD2691EC30008E0E97 /* Parameters.swift */; };
 		FFBF39A027FF683C00E461FD /* OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */; };
+		FFDE39A72811E5040060B2F1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE39A62811E5040060B2F1 /* ProfileViewController.swift */; };
 		FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */; };
 		FFFA9B6827FB68170005289B /* CodeDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6727FB68170005289B /* CodeDesignableView.swift */; };
 		FFFA9B6A27FB68410005289B /* StandardShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA9B6927FB68410005289B /* StandardShadowView.swift */; };
@@ -103,6 +104,7 @@
 		A461B32589602972EEC29DD4 /* Pods-IShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.debug.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4354B2368A087BD0343D6A /* Pods-FootballPitch.kz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.release.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.release.xcconfig"; sourceTree = "<group>"; };
 		FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewCell.swift; sourceTree = "<group>"; };
+		FFDE39A62811E5040060B2F1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FFFA9B6427FB5CE10005289B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FFFA9B6727FB68170005289B /* CodeDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDesignableView.swift; sourceTree = "<group>"; };
 		FFFA9B6927FB68410005289B /* StandardShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardShadowView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		9B6C58EB2684A71A00EFD5B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE39A12811E4610060B2F1 /* Profile */,
 				FFFA9B6027FB5C3A0005289B /* Onboarding */,
 				9B6C58E92684A63800EFD5B2 /* TabBarController */,
 				9B6C58EA2684A71200EFD5B2 /* Second */,
@@ -373,6 +376,30 @@
 				FFBF399F27FF683C00E461FD /* OnboardingViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FFDE39A12811E4610060B2F1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE39A32811E4780060B2F1 /* ViewController */,
+				FFDE39A22811E4700060B2F1 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FFDE39A22811E4700060B2F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFDE39A32811E4780060B2F1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE39A62811E5040060B2F1 /* ProfileViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FFFA9B6027FB5C3A0005289B /* Onboarding */ = {
@@ -547,6 +574,7 @@
 				9BBE41A82691EA06008E0E97 /* MainViewModel.swift in Sources */,
 				9B743B0A268203680029FA38 /* SecondVC.swift in Sources */,
 				9B743ADB2681D35F0029FA38 /* AppDelegate.swift in Sources */,
+				FFDE39A72811E5040060B2F1 /* ProfileViewController.swift in Sources */,
 				9B6C590E2684A80200EFD5B2 /* UITextField+Extension.swift in Sources */,
 				04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */,
 				4AA78DBA27FF7EA500EC787D /* FieldsModel.swift in Sources */,
