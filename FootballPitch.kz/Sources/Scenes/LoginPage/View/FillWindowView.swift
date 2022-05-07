@@ -9,9 +9,9 @@ import Foundation
 import SnapKit
 import MaterialComponents
 import UIKit
-import SwiftUI
 
 class FillWindowView: UIView {
+    public var enterClicked: (() -> Void)?
 
     var titleString: String? {
         didSet {
@@ -112,7 +112,7 @@ class FillWindowView: UIView {
         button.setTitleColor(.palette(.white), for: .normal)
         button.backgroundColor = .palette(.accent)
         button.layer.cornerRadius = 8
-        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleEnterButton), for: .touchUpInside)
 
         return button
     }()
@@ -128,11 +128,12 @@ class FillWindowView: UIView {
     }
 }
 
-// MARK: - Methods
+//MARK: - Action
 extension FillWindowView {
-    
-    @objc func buttonClicked() {
-        self.window?.rootViewController = MainTabBarController()
+    @objc private func handleEnterButton() {
+        if let enterClicked = enterClicked {
+            enterClicked()
+        }
     }
 }
 

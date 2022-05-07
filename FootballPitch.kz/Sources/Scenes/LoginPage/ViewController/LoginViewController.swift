@@ -82,6 +82,18 @@ extension LoginViewController {
     }
 }
 
+//MARK: - Transition
+extension LoginViewController {
+    private func openTabBar() {
+        if let window = UIApplication.shared.keyWindow {
+            let vc = MainTabBarController()
+            window.rootViewController = vc
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            window.makeKeyAndVisible()
+        }
+    }
+}
+
 //MARK: - CodeDesignable
 extension LoginViewController: CodeDesignable {
     func setupViews() {
@@ -194,6 +206,10 @@ extension LoginViewController: CodeDesignable {
             bottomLabel.textAlignment = .center
         }
 
+        fillWindowView.enterClicked = { [weak self] in
+            self?.openTabBar()
+        }
+        
         bottomLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(transitionHandler))
         bottomLabel.addGestureRecognizer(tapGesture)
