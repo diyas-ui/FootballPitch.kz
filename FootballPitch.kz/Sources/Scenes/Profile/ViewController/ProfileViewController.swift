@@ -113,6 +113,11 @@ extension ProfileViewController {
     @objc func exitClicked() {
         print(#function)
     }
+    
+    @objc func editClicked() {
+        let vc = EditProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ProfileViewController: CodeDesignable {
@@ -134,6 +139,8 @@ extension ProfileViewController: CodeDesignable {
             view.addSubview($0)
         }
 
+        editView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editClicked)))
+        
         setupTopView()
         setupNavigationBar()
         setupConstraints()

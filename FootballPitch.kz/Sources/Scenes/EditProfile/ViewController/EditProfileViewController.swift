@@ -185,6 +185,7 @@ extension EditProfileViewController: ToolbarPickerViewDelegate {
 //MARK: - CodeDesignable
 extension EditProfileViewController: CodeDesignable {
     func setupViews() {
+        title = "Edit Profile"
         view.backgroundColor = .palette(.white)
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleScrollView)))
         saveButton.addTarget(self, action: #selector(handleSaveButton), for: .touchUpInside)
@@ -248,10 +249,10 @@ extension EditProfileViewController: CodeDesignable {
         }
         
         stackView.snp.makeConstraints { (m) in
-            m.top.equalToSuperview()
+            m.top.equalToSuperview().offset(16)
             m.left.equalToSuperview().offset(40)
             m.right.equalToSuperview().offset(-40)
-            m.bottom.equalToSuperview()
+            m.bottom.equalToSuperview().offset(-16)
         }
         
         profileImageView.snp.makeConstraints {
