@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
@@ -111,12 +112,36 @@ class ProfileViewController: UIViewController {
 //MARK: - Actions
 extension ProfileViewController {
     @objc func exitClicked() {
-        print(#function)
+        do {
+            try FirebaseAuth.Auth.auth().signOut()
+            openLoginPage()
+        }
+        catch {
+            showMessage(title: "Error", message: "Something went wrong")
+        }
+    }
+    
+    private func openLoginPage() {
+        if let window = UIApplication.shared.keyWindow {
+            let vc = LoginViewController(with: .login)
+            window.rootViewController = vc
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            window.makeKeyAndVisible()
+        }
     }
     
     @objc func editClicked() {
         let vc = EditProfileViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//MARK: - Methods
+extension ProfileViewController {
+    private func showMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(alert, animated: true)
     }
 }
 

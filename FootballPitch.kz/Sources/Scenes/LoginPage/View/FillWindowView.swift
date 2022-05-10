@@ -12,6 +12,18 @@ import UIKit
 
 class FillWindowView: UIView {
     public var enterClicked: (() -> Void)?
+    
+    public var firstFieldText: String? {
+        get {
+            return firstTextField.text
+        }
+    }
+    
+    public var secondFieldText: String? {
+        get {
+            return secondTextField.text
+        }
+    }
 
     var titleString: String? {
         didSet {
@@ -83,6 +95,7 @@ class FillWindowView: UIView {
         let textField = MDCOutlinedTextField(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         textField.setOutlineColor(.palette(.lightGrey), for: .normal)
         textField.setOutlineColor(.palette(.lightGrey), for: .editing)
+        textField.autocorrectionType = .no
         textField.sizeToFit()
 
         return textField
@@ -92,6 +105,7 @@ class FillWindowView: UIView {
         let textField = MDCOutlinedTextField(frame: CGRect(x: 0, y: 0, width: 296, height: 46))
         textField.setOutlineColor(.palette(.lightGrey), for: .normal)
         textField.setOutlineColor(.palette(.lightGrey), for: .editing)
+        textField.autocorrectionType = .no
         textField.sizeToFit()
 
         return textField
@@ -140,7 +154,7 @@ extension FillWindowView {
 //MARK: - CodeDesignable
 extension FillWindowView: CodeDesignable {
     func setupViews() {
-        
+        backgroundColor = .clear
         addSubview(containerView)
         
         [titleLabel,
@@ -150,8 +164,6 @@ extension FillWindowView: CodeDesignable {
          enterButton].forEach {
             addSubview($0)
         }
-        
-        backgroundColor = .clear
         
         setupConstraints()
     }
