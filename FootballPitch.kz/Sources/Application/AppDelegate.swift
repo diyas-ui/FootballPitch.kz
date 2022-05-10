@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
+        configureFirebase()
         AppAppearance.setupAppearance()
                 
         return true
+    }
+    
+    func configureFirebase() {
+        FirebaseApp.configure()
     }
 }

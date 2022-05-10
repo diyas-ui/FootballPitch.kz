@@ -17,6 +17,7 @@
 		4A19E1B52808A8B2000F1019 /* SkillLevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B42808A8B2000F1019 /* SkillLevelEnum.swift */; };
 		4A19E1B82808A8D2000F1019 /* FootEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B72808A8D2000F1019 /* FootEnum.swift */; };
 		4A19E1BA2808B90C000F1019 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B92808B90C000F1019 /* ToolbarPickerView.swift */; };
+		4A968D9E282ADEC60070FFB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A968D9D282ADEC60070FFB6 /* GoogleService-Info.plist */; };
 		4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */; };
 		4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */; };
 		4A968DCB27F1F38E003085CB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */; };
@@ -73,6 +74,7 @@
 		4A19E1B42808A8B2000F1019 /* SkillLevelEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevelEnum.swift; sourceTree = "<group>"; };
 		4A19E1B72808A8D2000F1019 /* FootEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootEnum.swift; sourceTree = "<group>"; };
 		4A19E1B92808B90C000F1019 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		4A968D9D282ADEC60070FFB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		4A968DC627F1F38D003085CB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		4A968DC727F1F38E003085CB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		9B743AD92681D35F0029FA38 /* FootballPitch.kz */ = {
 			isa = PBXGroup;
 			children = (
+				4A968D9D282ADEC60070FFB6 /* GoogleService-Info.plist */,
 				4A968DCD27F1F395003085CB /* Fonts */,
 				9B743AE82681D3610029FA38 /* Info.plist */,
 				9B6C58E52684A5E600EFD5B2 /* Resources */,
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A968DCA27F1F38E003085CB /* Poppins-SemiBold.ttf in Resources */,
+				4A968D9E282ADEC60070FFB6 /* GoogleService-Info.plist in Resources */,
 				9B743AE72681D3610029FA38 /* LaunchScreen.storyboard in Resources */,
 				4A968DCC27F1F38E003085CB /* Poppins-Bold.ttf in Resources */,
 				4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */,
