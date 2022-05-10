@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,14 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = OnboardingViewController()
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
         
+        start(window)
+        window?.makeKeyAndVisible()
+                
         AppAppearance.setupAppearance()
                 
         return true
+    }
+    
+    func start(_ window: UIWindow?) {
+        configureFirebase()
+        
+        if DeviceService.shared.isFirstLaunch {
+            window?.rootViewController = OnboardingViewController()
+            DeviceService.shared.isFirstLaunch = false
+        } else {
+            if FirebaseAuth.Auth.auth().currentUser != nil {
+                window?.rootViewController = MainTabBarController()
+            } else {
+                window?.rootViewController = LoginViewController(with: .login)
+            }
+        }
+    }
+    
+    func configureFirebase() {
+        FirebaseApp.configure()
     }
 }

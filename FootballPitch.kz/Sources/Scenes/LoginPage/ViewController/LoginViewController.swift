@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 enum PageType {
     case login
@@ -14,6 +15,8 @@ enum PageType {
 }
 
 class LoginViewController: UIViewController {
+    
+    public var close: ((PageType) -> Void)?
     
     private var type: PageType
 
@@ -66,19 +69,73 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func transitionHandler() {
-        switch type {
-        case .login:
-            let registrationVC = LoginViewController(with: .register)
-            present(registrationVC, animated: true)
-            registrationVC.modalPresentationStyle = .overCurrentContext
+        if let close = close {
+            close(type)
+            dismiss(animated: true, completion: nil)
+        } else {
+            if type == .login {
+                openLoginPage(type: .register)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+}
 
-        case .register:
-            let loginVC = LoginViewController(with: .login)
-            present(loginVC, animated: true)
-            loginVC.modalPresentationStyle = .fullScreen
+//MARK: - Methods
+extension LoginViewController {
+    private func signUp() {
+        guard let email = fillWindowView.firstFieldText, let password = fillWindowView.secondFieldText else {
+            return
         }
 
-        setupViews()
+        self.createUser(email: email, password: password)
+    }
+    
+    private func signIn() {
+        guard let email = fillWindowView.firstFieldText, let password = fillWindowView.secondFieldText else {
+            return
+        }
+        
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+            guard let self = self else {
+                return
+            }
+            
+            guard error == nil else {
+                self.showMessage(title: "", message: error?.localizedDescription ?? "")
+                return
+            }
+            
+            self.openTabBar()
+        }
+    }
+    
+    private func createUser(email: String, password: String) {
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard let self = self else {
+                return
+            }
+            
+            guard error == nil else {
+                self.showMessage(title: "", message: error?.localizedDescription ?? "")
+                return
+            }
+            
+            self.showMessage(title: "Success", message: "You have successfully registered", withType: true)
+        }
+    }
+    
+    private func showMessage(title: String, message: String, withType: Bool = false) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if withType == true {
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                self.openLoginPage(type: .login)
+            }))
+        } else {
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        }
+        present(alert, animated: true)
     }
 }
 
@@ -91,6 +148,11 @@ extension LoginViewController {
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
             window.makeKeyAndVisible()
         }
+    }
+    
+    private func openLoginPage(type: PageType) {
+        let vc = LoginViewController(with: type)
+        present(vc, animated: true)
     }
 }
 
@@ -160,9 +222,9 @@ extension LoginViewController: CodeDesignable {
     private func setup() {
         switch type {
         case .login:
-            fillWindowView.firstTextString = "Phone Number"
-            fillWindowView.firstTextPlaceholder = "+7(7XX)XXX-XX-XX"
-            fillWindowView.secondTextPlaceholder = ""
+            fillWindowView.firstTextString = "Email"
+            fillWindowView.firstTextPlaceholder = "example@gmail.com"
+            fillWindowView.secondTextPlaceholder = "Password"
             fillWindowView.secondTextString = "Password"
             fillWindowView.titleString = "Login"
             fillWindowView.isSecurityKeyboard = true
@@ -183,13 +245,13 @@ extension LoginViewController: CodeDesignable {
             
 
         case .register:
-            fillWindowView.firstTextString = "Full name"
-            fillWindowView.firstTextPlaceholder = ""
-            fillWindowView.secondTextString = "Email"
-            fillWindowView.secondTextPlaceholder = "example@gmail.com"
+            fillWindowView.firstTextString = "Email"
+            fillWindowView.firstTextPlaceholder = "example@gmail.com"
+            fillWindowView.secondTextString = "Password"
+            fillWindowView.secondTextPlaceholder = "Password"
             fillWindowView.titleString = "Sign Up"
-            fillWindowView.isHiddenForgotPassword = true
-            fillWindowView.isSecurityKeyboard = false
+            fillWindowView.isHiddenForgotPassword = false
+            fillWindowView.isSecurityKeyboard = true
             fillWindowView.titleButtonString = "Sign Up"
             fillWindowView.remakeConstraints()
             
@@ -207,7 +269,14 @@ extension LoginViewController: CodeDesignable {
         }
 
         fillWindowView.enterClicked = { [weak self] in
-            self?.openTabBar()
+            switch self?.type {
+            case .login:
+                self?.signIn()
+            case .register:
+                self?.signUp()
+            default:
+                break
+            }
         }
         
         bottomLabel.isUserInteractionEnabled = true
