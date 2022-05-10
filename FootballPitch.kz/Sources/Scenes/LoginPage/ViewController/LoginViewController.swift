@@ -16,6 +16,8 @@ enum PageType {
 
 class LoginViewController: UIViewController {
     
+    public var close: ((PageType) -> Void)?
+    
     private var type: PageType
 
     private let headerView: LoginAndRegisterHeaderView = {
@@ -67,14 +69,16 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func transitionHandler() {
-        switch type {
-        case .login:
-            openLoginPage(type: .register, presentStyle: .overCurrentContext)
-        case .register:
-            openLoginPage(type: .login, presentStyle: .fullScreen)
+        if let close = close {
+            close(type)
+            dismiss(animated: true, completion: nil)
+        } else {
+            if type == .login {
+                openLoginPage(type: .register)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
         }
-
-        setupViews()
     }
 }
 
@@ -126,7 +130,7 @@ extension LoginViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if withType == true {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                self.openLoginPage(type: .login, presentStyle: .fullScreen)
+                self.openLoginPage(type: .login)
             }))
         } else {
             alert.addAction(UIAlertAction(title: "OK", style: .cancel))
@@ -146,10 +150,9 @@ extension LoginViewController {
         }
     }
     
-    private func openLoginPage(type: PageType, presentStyle: UIModalPresentationStyle) {
+    private func openLoginPage(type: PageType) {
         let vc = LoginViewController(with: type)
         present(vc, animated: true)
-        vc.modalPresentationStyle = presentStyle
     }
 }
 

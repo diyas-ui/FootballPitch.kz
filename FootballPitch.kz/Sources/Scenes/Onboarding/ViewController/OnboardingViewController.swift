@@ -108,15 +108,23 @@ extension OnboardingViewController {
     @objc
     private func openLoginPage() {
         let loginVC = LoginViewController(with: .login)
+        loginVC.close = { [weak self] _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.openRegistationPage()
+            }
+        }
         present(loginVC, animated: true)
-        loginVC.modalPresentationStyle = .fullScreen
     }
     
     @objc
     private func openRegistationPage() {
         let loginVC = LoginViewController(with: .register)
+        loginVC.close = { [weak self] _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.openLoginPage()
+            }
+        }
         present(loginVC, animated: true)
-        loginVC.modalPresentationStyle = .fullScreen
     }
 }
 
