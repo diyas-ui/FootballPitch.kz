@@ -1,26 +1,29 @@
 //
-//  MainVC.swift
+//  PlayersViewController.swift
 //  FootballPitch.kz
 //
-//  Created by Akzhol Imangazin on 7/4/21.
+//  Created by 123456 on 12.05.2022.
 //
 
 import UIKit
 
-class MainVC: UIViewController {
+class PlayersViewController: UIViewController {
     
-    private var fields: [FieldsModel] = [
-        FieldsModel(icon: UIImage(named: "field1"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field2"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field1"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field2"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57")
+    private var allPlayers: [PlayersModel] = []
+    private var players: [PlayersModel] = [
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Azamat Sharapat", positions: ["Left defender", "Center back"]),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Agmanov Diyas", positions: ["Right defender", "Midfielder"]),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Kupesov Madi", positions: ["Left Winger", "Striker"]),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Sagyngali Adylet", positions: ["Left defender"]),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Imangazin Akzhol", positions: ["Midfielder"]),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Khametov Dauren", positions: ["Left winger", "Striker", "Midfielder"])
     ]
     
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldPoppins(24)
         label.textColor = .palette(.white)
-        label.text = "All Futsals"
+        label.text = "Players"
         return label
     }()
     
@@ -47,38 +50,49 @@ class MainVC: UIViewController {
     }
 }
 
-//MARK: - Actions
-extension MainVC {
-    @objc func bellClicked() {
-        print(#function)
-    }
-    
+//MARK: - Methods
+extension PlayersViewController {
     @objc func didChangeText() {
-        print(#function)
+        if let text = searchTextField.text {
+            if text == "" {
+                players = allPlayers
+            } else {
+                players = allPlayers.filter({ player in
+                    if let name = player.name {
+                        return name.contains(text)
+                    }
+                    
+                    return false
+                })
+            }
+            
+            self.tableView.reloadData()
+        }
     }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
-extension MainVC: UITableViewDelegate, UITableViewDataSource {
+extension PlayersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fields.count
+        return players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(MainPageCell.self, indexPath: indexPath)
-        cell.configureCell(object: fields[indexPath.row])
+        let cell = tableView.dequeueCell(PlayersCell.self, indexPath: indexPath)
+        cell.configureCell(object: players[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 148
+        return 88
     }
 }
 
 //MARK: - CodeDesignable
-extension MainVC: CodeDesignable {
+extension PlayersViewController: CodeDesignable {
     func setupViews() {
         view.backgroundColor = .palette(.lightGrey)
+        allPlayers = players
         
         [topView, searchTextField, tableView].forEach {
             view.addSubview($0)
@@ -94,7 +108,6 @@ extension MainVC: CodeDesignable {
     
     func setupNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "bell"), style: .plain, target: nil, action: #selector(bellClicked))
     }
     
     func setupTopView() {
@@ -103,7 +116,7 @@ extension MainVC: CodeDesignable {
     }
     
     func setupSearchView() {
-        searchTextField.placeHolderAttributed = NSAttributedString(string: "Search for futsals", attributes: [NSAttributedString.Key.foregroundColor: UIColor.palette(.black800)])
+        searchTextField.placeHolderAttributed = NSAttributedString(string: "Search for players", attributes: [NSAttributedString.Key.foregroundColor: UIColor.palette(.black800)])
         searchTextField.backgroundColor = .palette(.white)
         searchTextField.addTarget(self, action: #selector(didChangeText), for: .editingChanged)
         searchTextField.leftViewPadding = 12
@@ -115,7 +128,7 @@ extension MainVC: CodeDesignable {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.registerCell(MainPageCell.self)
+        tableView.registerCell(PlayersCell.self)
     }
     
     func setupConstraints() {
