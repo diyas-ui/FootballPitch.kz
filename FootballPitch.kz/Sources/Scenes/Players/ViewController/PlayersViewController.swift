@@ -11,12 +11,12 @@ class PlayersViewController: UIViewController {
     
     private var allPlayers: [PlayersModel] = []
     private var players: [PlayersModel] = [
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Azamat Sharapat", positions: ["Left defender", "Center back"]),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Agmanov Diyas", positions: ["Right defender", "Midfielder"]),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Kupesov Madi", positions: ["Left Winger", "Striker"]),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Sagyngali Adylet", positions: ["Left defender"]),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Imangazin Akzhol", positions: ["Midfielder"]),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Khametov Dauren", positions: ["Left winger", "Striker", "Midfielder"])
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Azamat Sharapat", positions: ["Left defender", "Center back"], email: "sharapattt@gmail.com", phone: "87781234567", skillLevel: "Legend", strongFoot: "Right", weight: 75, height: 180),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Agmanov Diyas", positions: ["Right defender", "Midfielder"], email: "agmanovd@gmail.com", phone: "87781234567", skillLevel: "Amateur", strongFoot: "Right", weight: 62, height: 180),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Kupesov Madi", positions: ["Left Winger", "Striker"], email: "kupesovm@gmail.com", phone: "87781234567", skillLevel: "Beginner", strongFoot: "Right", weight: 70, height: 170),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Sagyngali Adylet", positions: ["Left defender"], phone: "87781234567", weight: 75, height: 180),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Imangazin Akzhol", positions: ["Midfielder"], email: "imangazinjr@gmail.com", skillLevel: "Advanced", strongFoot: "Right"),
+        PlayersModel(icon: UIImage(named: "icon_image"), name: "Khametov Dauren", positions: ["Left defender", "Midfielder", "Left Winger", "Striker", "Right Winger"], email: "khametovd@gmail.com", phone: "87781234567", skillLevel: "Advanced", strongFoot: "Right", weight: 70, height: 180)
     ]
     
     private var titleLabel: UILabel = {
@@ -69,6 +69,12 @@ extension PlayersViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func openDetailPlayers(index: Int) {
+        let vc = DetailPlayersViewController()
+        vc.player = players[index]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -81,6 +87,10 @@ extension PlayersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueCell(PlayersCell.self, indexPath: indexPath)
         cell.configureCell(object: players[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openDetailPlayers(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
