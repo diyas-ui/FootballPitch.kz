@@ -59,8 +59,8 @@ extension MainTabBarController {
         mainVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_fields_icon").withRenderingMode(.alwaysTemplate), tag: 0)
         let mainNC = UINavigationController(rootViewController: mainVC)
     
-        let playersVC = SecondVC()
-        playersVC.title = "Players"
+        let playersVC = PlayersViewController()
+        playersVC.title = ""
         playersVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_players_icon").withRenderingMode(.alwaysTemplate), tag: 1)
         let playersNC = UINavigationController(rootViewController: playersVC)
 

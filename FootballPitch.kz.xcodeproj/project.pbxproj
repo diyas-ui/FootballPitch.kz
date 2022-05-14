@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD35FD27F359BB000BCE28 /* FillWindowView.swift */; };
 		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
-		04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F827ECC54500D5A671 /* MainPageView.swift */; };
 		04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */; };
 		41C569B20E915EF57F86E28F /* Pods_FootballPitch_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3B83FDA3E6D577B2010B98 /* Pods_FootballPitch_kz.framework */; };
 		4A19E1AE28063A28000F1019 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1AD28063A28000F1019 /* EditProfileViewController.swift */; };
@@ -17,6 +16,11 @@
 		4A19E1B52808A8B2000F1019 /* SkillLevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B42808A8B2000F1019 /* SkillLevelEnum.swift */; };
 		4A19E1B82808A8D2000F1019 /* FootEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B72808A8D2000F1019 /* FootEnum.swift */; };
 		4A19E1BA2808B90C000F1019 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E1B92808B90C000F1019 /* ToolbarPickerView.swift */; };
+		4A943A03282C4346008BE76F /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A943A02282C4346008BE76F /* PlayersViewController.swift */; };
+		4A943A07282C4524008BE76F /* PlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A943A06282C4524008BE76F /* PlayersCell.swift */; };
+		4A943A0A282C465C008BE76F /* PlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A943A09282C465C008BE76F /* PlayersModel.swift */; };
+		4A943A0D282C53A3008BE76F /* DetailPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A943A0C282C53A3008BE76F /* DetailPlayersViewController.swift */; };
+		4A943A0F282FDA10008BE76F /* LeftRightLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A943A0E282FDA10008BE76F /* LeftRightLabelsView.swift */; };
 		4A968D9E282ADEC60070FFB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A968D9D282ADEC60070FFB6 /* GoogleService-Info.plist */; };
 		4A968DA0282B08280070FFB6 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A968D9F282B08280070FFB6 /* DeviceService.swift */; };
 		4A968DC927F1F38E003085CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */; };
@@ -65,7 +69,6 @@
 /* Begin PBXFileReference section */
 		04CD35FD27F359BB000BCE28 /* FillWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillWindowView.swift; sourceTree = "<group>"; };
 		04DE94F427ECC39900D5A671 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		04DE94F827ECC54500D5A671 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginAndRegisterHeaderView.swift; path = FootballPitch.kz/Sources/Scenes/MainPage/View/LoginAndRegisterHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		0B70290683BD35397A9FC8F0 /* Pods-IShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IShop.release.xcconfig"; path = "Target Support Files/Pods-IShop/Pods-IShop.release.xcconfig"; sourceTree = "<group>"; };
 		0EA64BA6D68E8978975B01BA /* Pods-FootballPitch.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballPitch.kz.debug.xcconfig"; path = "Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +78,11 @@
 		4A19E1B42808A8B2000F1019 /* SkillLevelEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevelEnum.swift; sourceTree = "<group>"; };
 		4A19E1B72808A8D2000F1019 /* FootEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootEnum.swift; sourceTree = "<group>"; };
 		4A19E1B92808B90C000F1019 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		4A943A02282C4346008BE76F /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		4A943A06282C4524008BE76F /* PlayersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCell.swift; sourceTree = "<group>"; };
+		4A943A09282C465C008BE76F /* PlayersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersModel.swift; sourceTree = "<group>"; };
+		4A943A0C282C53A3008BE76F /* DetailPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlayersViewController.swift; sourceTree = "<group>"; };
+		4A943A0E282FDA10008BE76F /* LeftRightLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightLabelsView.swift; sourceTree = "<group>"; };
 		4A968D9D282ADEC60070FFB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A968D9F282B08280070FFB6 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		4A968DC527F1F38D003085CB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
@@ -156,7 +164,6 @@
 		04DE94F727ECC52D00D5A671 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04DE94F827ECC54500D5A671 /* MainPageView.swift */,
 				4AA78DB727FF796600EC787D /* MainPageCell.swift */,
 			);
 			path = View;
@@ -205,6 +212,41 @@
 				4A19E1B72808A8D2000F1019 /* FootEnum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		4A943A04282C4350008BE76F /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				4A943A08282C4532008BE76F /* View */,
+				4A943A05282C4359008BE76F /* ViewController */,
+				4A943A0B282C468A008BE76F /* Model */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		4A943A05282C4359008BE76F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A943A02282C4346008BE76F /* PlayersViewController.swift */,
+				4A943A0C282C53A3008BE76F /* DetailPlayersViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4A943A08282C4532008BE76F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A943A06282C4524008BE76F /* PlayersCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A943A0B282C468A008BE76F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A943A09282C465C008BE76F /* PlayersModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4A968DCD27F1F395003085CB /* Fonts */ = {
@@ -289,6 +331,7 @@
 				04DE94F327ECC36600D5A671 /* LoginPage */,
 				9BBE41A62691E9A1008E0E97 /* MainPage */,
 				4A19E1AF28063A2C000F1019 /* EditProfile */,
+				4A943A04282C4350008BE76F /* Players */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -334,6 +377,7 @@
 				9BBE41992691E5D1008E0E97 /* BaseController.swift */,
 				4AA78DB527FF67E100EC787D /* SearchTextField.swift */,
 				4A19E1B92808B90C000F1019 /* ToolbarPickerView.swift */,
+				4A943A0E282FDA10008BE76F /* LeftRightLabelsView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -435,16 +479,8 @@
 			isa = PBXGroup;
 			children = (
 				FFDE39A32811E4780060B2F1 /* ViewController */,
-				FFDE39A22811E4700060B2F1 /* ViewModel */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		FFDE39A22811E4700060B2F1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FFDE39A32811E4780060B2F1 /* ViewController */ = {
@@ -608,7 +644,9 @@
 				9B626976268A0277009AE471 /* Constants.swift in Sources */,
 				9BBE419D2691E63F008E0E97 /* Palette.swift in Sources */,
 				9B6C58E32684A40A00EFD5B2 /* MainTabBarController.swift in Sources */,
+				4A943A03282C4346008BE76F /* PlayersViewController.swift in Sources */,
 				9B6C58F52684A77C00EFD5B2 /* UICollectionView+Extension.swift in Sources */,
+				4A943A0D282C53A3008BE76F /* DetailPlayersViewController.swift in Sources */,
 				9B6C59082684A7DA00EFD5B2 /* UIColor+Extension.swift in Sources */,
 				9BBE41922691D886008E0E97 /* Dictionary+Extension.swift in Sources */,
 				9B6C59022684A7B600EFD5B2 /* UIView+Extension.swift in Sources */,
@@ -625,9 +663,12 @@
 				FFFA9B6527FB5CE10005289B /* OnboardingViewController.swift in Sources */,
 				9B6C590B2684A7E100EFD5B2 /* UIFont+Extension.swift in Sources */,
 				FFBF39A027FF683C00E461FD /* OnboardingViewCell.swift in Sources */,
+				4A943A07282C4524008BE76F /* PlayersCell.swift in Sources */,
+				4A943A0F282FDA10008BE76F /* LeftRightLabelsView.swift in Sources */,
 				9B6C59142684A87F00EFD5B2 /* UIStackView+Extension.swift in Sources */,
 				9BBE41AE2691EC30008E0E97 /* Parameters.swift in Sources */,
 				9B6C58F92684A78600EFD5B2 /* UILabel+Extension.swift in Sources */,
+				4A943A0A282C465C008BE76F /* PlayersModel.swift in Sources */,
 				9BBE41952691D943008E0E97 /* CodeDesignable.swift in Sources */,
 				9BBE41A82691EA06008E0E97 /* MainViewModel.swift in Sources */,
 				4A19E1AE28063A28000F1019 /* EditProfileViewController.swift in Sources */,
@@ -635,7 +676,6 @@
 				9B743ADB2681D35F0029FA38 /* AppDelegate.swift in Sources */,
 				FFDE39A72811E5040060B2F1 /* ProfileViewController.swift in Sources */,
 				9B6C590E2684A80200EFD5B2 /* UITextField+Extension.swift in Sources */,
-				04DE94F927ECC54500D5A671 /* MainPageView.swift in Sources */,
 				4AA78DBA27FF7EA500EC787D /* FieldsModel.swift in Sources */,
 				9B6C59172684A8FC00EFD5B2 /* BaseViewController.swift in Sources */,
 				4A19E1BA2808B90C000F1019 /* ToolbarPickerView.swift in Sources */,
