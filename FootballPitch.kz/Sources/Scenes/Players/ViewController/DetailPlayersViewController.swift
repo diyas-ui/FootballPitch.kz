@@ -15,6 +15,18 @@ class DetailPlayersViewController: UIViewController {
         }
     }
     
+    private var scrollView = UIScrollView()
+    private var scrollContentView = UIView()
+    
+    private var stackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 8
+        view.axis = .vertical
+        return view
+    }()
+    
     private var topView = UIView()
     private var iconImageView: UIImageView = {
         $0.image = UIImage(named: "icon_image")
@@ -152,10 +164,18 @@ extension DetailPlayersViewController {
 //MARK: - CodeDesignable
 extension DetailPlayersViewController: CodeDesignable {
     func setupViews() {
+        scrollView.alwaysBounceVertical = true
         view.backgroundColor = .palette(.lightGrey)
-        
-        [topView, iconImageView, nameLabel, contactsLabel, contactsStackView, physicalDatasLabel, physicalDatasStackView].forEach {
+
+        [topView, iconImageView, nameLabel, scrollView].forEach {
             view.addSubview($0)
+        }
+        
+        scrollView.addSubview(scrollContentView)
+        scrollContentView.addSubview(stackView)
+        
+        [contactsLabel, contactsStackView, physicalDatasLabel, physicalDatasStackView].forEach {
+            stackView.addArrangedSubview($0)
         }
         
         setupTopView()
@@ -169,6 +189,7 @@ extension DetailPlayersViewController: CodeDesignable {
     }
     
     func setupStackViews() {
+        stackView.setCustomSpacing(24, after: contactsStackView)
         [contactsStackView, physicalDatasStackView].forEach {
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 8
@@ -194,25 +215,21 @@ extension DetailPlayersViewController: CodeDesignable {
             $0.right.left.equalToSuperview().inset(16)
         }
         
-        contactsLabel.snp.makeConstraints {
+        scrollView.snp.makeConstraints {
             $0.top.equalTo(topView.snp.bottom).offset(24)
-            $0.right.left.equalToSuperview().inset(24)
+            $0.right.left.bottom.equalToSuperview()
         }
         
-        contactsStackView.snp.makeConstraints {
-            $0.top.equalTo(contactsLabel.snp.bottom).offset(8)
-            $0.right.left.equalToSuperview().inset(24)
+        scrollContentView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.width.equalTo(scrollView.snp.width)
         }
         
-        physicalDatasLabel.snp.makeConstraints {
-            $0.top.equalTo(contactsStackView.snp.bottom).offset(24)
+        stackView.snp.makeConstraints {
+            $0.top.equalToSuperview()
             $0.right.left.equalToSuperview().inset(24)
-        }
-        
-        physicalDatasStackView.snp.makeConstraints {
-            $0.top.equalTo(physicalDatasLabel.snp.bottom).offset(8)
-            $0.right.left.equalToSuperview().inset(24)
-            $0.bottom.lessThanOrEqualTo(-16)
+            $0.bottom.equalToSuperview().offset(-16)
         }
     }
 }

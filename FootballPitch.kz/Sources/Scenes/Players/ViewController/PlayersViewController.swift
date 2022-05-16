@@ -36,7 +36,7 @@ class PlayersViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
 
@@ -157,7 +157,7 @@ extension PlayersViewController: CodeDesignable {
         tableView.snp.makeConstraints {
             $0.top.equalTo(searchTextField.snp.bottom).offset(8)
             $0.right.left.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalTo(-8 - (self.tabBarController?.tabBar.frame.height ?? 0))
         }
     }
 }

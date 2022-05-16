@@ -10,10 +10,10 @@ import UIKit
 class MainVC: UIViewController {
     
     private var fields: [FieldsModel] = [
-        FieldsModel(icon: UIImage(named: "field1"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field2"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field1"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57"),
-        FieldsModel(icon: UIImage(named: "field2"), title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57")
+        FieldsModel(icon: UIImage(named: "field1"), icons: [UIImage(named: "longfield"), UIImage(named: "longfield")], title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57", phone: "+7 778 123 45 67", status: "Opened", description: "Located at st. Rozybakiyeva, Central Futsal is one of the largest and most beautiful Futsals in Almaty. Easily accessible and just amazing service just for you and for your team.", amenities: [.wifi, .shower, .cafeteria, .parking], workingFrom: "9:00", workingTo: "23:00", latitude: 111, longitude: 111),
+        FieldsModel(icon: UIImage(named: "field1"), icons: [UIImage(named: "longfield"), UIImage(named: "longfield")], title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57", phone: "+7 778 123 45 67", status: "Opened", description: "Located at st. Rozybakiyeva, Central Futsal is one of the largest and most beautiful Futsals in Almaty. Easily accessible and just amazing service just for you and for your team.", amenities: [.wifi, .shower, .cafeteria, .parking], workingFrom: "9:00", workingTo: "23:00", latitude: 111, longitude: 111),
+        FieldsModel(icon: UIImage(named: "field1"), icons: [UIImage(named: "longfield"), UIImage(named: "longfield")], title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57", phone: "+7 778 123 45 67", status: "Opened", description: "Located at st. Rozybakiyeva, Central Futsal is one of the largest and most beautiful Futsals in Almaty. Easily accessible and just amazing service just for you and for your team.", amenities: [.wifi, .shower, .cafeteria, .parking], workingFrom: "9:00", workingTo: "23:00", latitude: 111, longitude: 111),
+        FieldsModel(icon: UIImage(named: "field1"), icons: [UIImage(named: "longfield"), UIImage(named: "longfield")], title: "Central Futsal", rating: 5.0, isFavorite: false, distance: 450, address: "Rozybakiyeva 57", phone: "+7 778 123 45 67", status: "Opened", description: "Located at st. Rozybakiyeva, Central Futsal is one of the largest and most beautiful Futsals in Almaty. Easily accessible and just amazing service just for you and for your team.", amenities: [.wifi, .shower, .cafeteria, .parking], workingFrom: "9:00", workingTo: "23:00", latitude: 111, longitude: 111),
     ]
     
     private var titleLabel: UILabel = {
@@ -33,7 +33,7 @@ class MainVC: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
 
@@ -56,6 +56,12 @@ extension MainVC {
     @objc func didChangeText() {
         print(#function)
     }
+    
+    func openDetailFieldPage(index: Int) {
+        let vc = DetailFieldViewController()
+        vc.field = fields[index]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -68,6 +74,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueCell(MainPageCell.self, indexPath: indexPath)
         cell.configureCell(object: fields[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openDetailFieldPage(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -134,7 +144,7 @@ extension MainVC: CodeDesignable {
         tableView.snp.makeConstraints {
             $0.top.equalTo(searchTextField.snp.bottom).offset(8)
             $0.right.left.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalTo(-8 - (self.tabBarController?.tabBar.frame.height ?? 0))
         }
     }
 }
