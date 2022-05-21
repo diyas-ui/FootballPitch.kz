@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041CB893282C18E6007ADE7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CB892282C18E6007ADE7B /* MapViewController.swift */; };
 		04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD35FD27F359BB000BCE28 /* FillWindowView.swift */; };
 		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
 		04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041CB892282C18E6007ADE7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		04CD35FD27F359BB000BCE28 /* FillWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillWindowView.swift; sourceTree = "<group>"; };
 		04DE94F427ECC39900D5A671 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginAndRegisterHeaderView.swift; path = FootballPitch.kz/Sources/Scenes/MainPage/View/LoginAndRegisterHeaderView.swift; sourceTree = SOURCE_ROOT; };
@@ -156,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041CB891282C17DA007ADE7B /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				041CB892282C18E6007ADE7B /* MapViewController.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		04DE94F327ECC36600D5A671 /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +350,7 @@
 		9B6C58EB2684A71A00EFD5B2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				041CB891282C17DA007ADE7B /* Maps */,
 				FFDE39A12811E4610060B2F1 /* Profile */,
 				FFFA9B6027FB5C3A0005289B /* Onboarding */,
 				9B6C58E92684A63800EFD5B2 /* TabBarController */,
@@ -547,6 +558,7 @@
 				9B743AD42681D35F0029FA38 /* Frameworks */,
 				9B743AD52681D35F0029FA38 /* Resources */,
 				D8BDBBD6C37334478AB17465 /* [CP] Embed Pods Frameworks */,
+				82E7F5B6D4E61F79172C855B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -630,6 +642,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		82E7F5B6D4E61F79172C855B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FootballPitch.kz/Pods-FootballPitch.kz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D8BDBBD6C37334478AB17465 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -673,6 +702,7 @@
 				9BBE41922691D886008E0E97 /* Dictionary+Extension.swift in Sources */,
 				9B6C59022684A7B600EFD5B2 /* UIView+Extension.swift in Sources */,
 				04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */,
+				041CB893282C18E6007ADE7B /* MapViewController.swift in Sources */,
 				9B6C58FC2684A79300EFD5B2 /* UIImageView+Extension.swift in Sources */,
 				FFFA9B6A27FB68410005289B /* StandardShadowView.swift in Sources */,
 				4A968DA0282B08280070FFB6 /* DeviceService.swift in Sources */,

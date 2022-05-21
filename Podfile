@@ -27,5 +27,8 @@ target 'FootballPitch.kz' do
 
   # Calendar
   pod 'JTAppleCalendar'
+  
+  # Map
+  pod 'Google-Maps-iOS-Utils', '~> 3.9.0'
 
 end

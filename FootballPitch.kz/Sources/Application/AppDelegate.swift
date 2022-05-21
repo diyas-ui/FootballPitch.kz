@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
                 
         AppAppearance.setupAppearance()
+        
+        GMSServices.provideAPIKey("AIzaSyBulyUUByuFnCtu7l2xmBxM8w5_qdGDygo")
                 
         return true
     }
