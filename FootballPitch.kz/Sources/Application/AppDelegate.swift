@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
                 
         AppAppearance.setupAppearance()
+        
+        GMSServices.provideAPIKey("AIzaSyBulyUUByuFnCtu7l2xmBxM8w5_qdGDygo")
                 
         return true
     }
@@ -28,16 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func start(_ window: UIWindow?) {
         configureFirebase()
         
-        if DeviceService.shared.isFirstLaunch {
-            window?.rootViewController = OnboardingViewController()
-            DeviceService.shared.isFirstLaunch = false
-        } else {
-            if FirebaseAuth.Auth.auth().currentUser != nil {
-                window?.rootViewController = MainTabBarController()
-            } else {
-                window?.rootViewController = LoginViewController(with: .login)
-            }
-        }
+//        if DeviceService.shared.isFirstLaunch {
+//            window?.rootViewController = OnboardingViewController()
+//            DeviceService.shared.isFirstLaunch = false
+//        } else {
+//            if FirebaseAuth.Auth.auth().currentUser != nil {
+//                window?.rootViewController = MainTabBarController()
+//            } else {
+////                window?.rootViewController = LoginViewController(with: .login)
+//                window?.rootViewController = MainTabBarController()
+//            }
+//        }
+        window?.rootViewController = MainTabBarController()
     }
     
     func configureFirebase() {

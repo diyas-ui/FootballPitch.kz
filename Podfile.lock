@@ -632,10 +632,34 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 2.30908.0)
+  - Google-Maps-iOS-Utils (3.9.0):
+    - Google-Maps-iOS-Utils/Clustering (= 3.9.0)
+    - Google-Maps-iOS-Utils/Geometry (= 3.9.0)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 3.9.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 3.9.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 3.9.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (3.9.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (3.9.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/GeometryUtils (3.9.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (3.9.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (3.9.0):
+    - GoogleMaps
   - GoogleDataTransport (9.1.4):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleMaps (6.2.1):
+    - GoogleMaps/Maps (= 6.2.1)
+  - GoogleMaps/Base (6.2.1)
+  - GoogleMaps/Maps (6.2.1):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -787,6 +811,7 @@ PODS:
 DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
+  - Google-Maps-iOS-Utils (~> 3.9.0)
   - JTAppleCalendar
   - Kingfisher
   - "MaterialComponents/TextControls+FilledTextAreas"
@@ -807,7 +832,9 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreInternal
     - FirebaseFirestore
+    - Google-Maps-iOS-Utils
     - GoogleDataTransport
+    - GoogleMaps
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -834,7 +861,9 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 54410e5d156bf406a764c2722d9f77d682723b4c
   FirebaseCoreInternal: 5b8f4f2e2970a4cb9bd1cf7ada16c8ba69a29530
   FirebaseFirestore: 3ff0784d61f9a0faa3d67c5a8b1e4fb0b828c6b1
+  Google-Maps-iOS-Utils: ae3b4e74b2d734454be32cf62ba8d6ad7283e0c1
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
+  GoogleMaps: 20d7b12be49a14287f797e88e0e31bc4156aaeb4
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
@@ -853,6 +882,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f48d185517cccfbc67762d673a4a726191bb2cc8
+PODFILE CHECKSUM: b948e7b280321dca81064224793681c14c3e89c2
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
