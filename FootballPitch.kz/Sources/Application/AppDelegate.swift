@@ -31,16 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func start(_ window: UIWindow?) {
         configureFirebase()
         
-        if DeviceService.shared.isFirstLaunch {
-            window?.rootViewController = OnboardingViewController()
-            DeviceService.shared.isFirstLaunch = false
-        } else {
-            if FirebaseAuth.Auth.auth().currentUser != nil {
-                window?.rootViewController = MainTabBarController()
-            } else {
-                window?.rootViewController = LoginViewController(with: .login)
-            }
-        }
+//        if DeviceService.shared.isFirstLaunch {
+//            window?.rootViewController = OnboardingViewController()
+//            DeviceService.shared.isFirstLaunch = false
+//        } else {
+//            if FirebaseAuth.Auth.auth().currentUser != nil {
+//                window?.rootViewController = MainTabBarController()
+//            } else {
+//                window?.rootViewController = LoginViewController(with: .login)
+//            }
+//        }
+        window?.rootViewController = MainTabBarController()
     }
     
     func configureFirebase() {

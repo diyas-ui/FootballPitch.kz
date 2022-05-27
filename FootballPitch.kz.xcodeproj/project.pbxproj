@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		041CB893282C18E6007ADE7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CB892282C18E6007ADE7B /* MapViewController.swift */; };
+		04341D6B283D3F4600078E8F /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341D6A283D3F4600078E8F /* BookingViewController.swift */; };
+		04341D6D283D47EB00078E8F /* MonthChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04341D6C283D47EB00078E8F /* MonthChooseView.swift */; };
 		04CD35FE27F359BB000BCE28 /* FillWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD35FD27F359BB000BCE28 /* FillWindowView.swift */; };
 		04DE94F527ECC39900D5A671 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94F427ECC39900D5A671 /* LoginViewController.swift */; };
 		04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */; };
@@ -75,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		041CB892282C18E6007ADE7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		04341D6A283D3F4600078E8F /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		04341D6C283D47EB00078E8F /* MonthChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChooseView.swift; sourceTree = "<group>"; };
 		04CD35FD27F359BB000BCE28 /* FillWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillWindowView.swift; sourceTree = "<group>"; };
 		04DE94F427ECC39900D5A671 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04DE94FC27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginAndRegisterHeaderView.swift; path = FootballPitch.kz/Sources/Scenes/MainPage/View/LoginAndRegisterHeaderView.swift; sourceTree = SOURCE_ROOT; };
@@ -191,6 +195,7 @@
 				4A943A1A2832D995008BE76F /* AmenitiesCell.swift */,
 				4A943A1C2832DAC3008BE76F /* ImageWithLabelView.swift */,
 				4A943A1E2832EE7B008BE76F /* LocationMapCell.swift */,
+				04341D6C283D47EB00078E8F /* MonthChooseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 			children = (
 				9BBE41A32691E999008E0E97 /* MainVC.swift */,
 				4A943A1028311F9B008BE76F /* DetailFieldViewController.swift */,
+				04341D6A283D3F4600078E8F /* BookingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 				04DE94FD27F20B7900D5A671 /* LoginAndRegisterHeaderView.swift in Sources */,
 				9BBE418F2691D866008E0E97 /* Data+Extension.swift in Sources */,
 				9B626981268A0675009AE471 /* SecondViewModel.swift in Sources */,
+				04341D6D283D47EB00078E8F /* MonthChooseView.swift in Sources */,
 				FFFA9B6827FB68170005289B /* CodeDesignableView.swift in Sources */,
 				4A943A1528312A1D008BE76F /* DataFieldCell.swift in Sources */,
 				4A19E1B52808A8B2000F1019 /* SkillLevelEnum.swift in Sources */,
@@ -737,6 +744,7 @@
 				9BBE419A2691E5D1008E0E97 /* BaseController.swift in Sources */,
 				4A943A1B2832D995008BE76F /* AmenitiesCell.swift in Sources */,
 				9B6C58ED2684A75600EFD5B2 /* UITableView+Extension.swift in Sources */,
+				04341D6B283D3F4600078E8F /* BookingViewController.swift in Sources */,
 				9BBE41A42691E999008E0E97 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

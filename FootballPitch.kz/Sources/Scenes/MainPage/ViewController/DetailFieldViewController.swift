@@ -86,7 +86,8 @@ extension DetailFieldViewController {
     }
     
     @objc func bookButtonClicked() {
-        print(#function)
+        let vc = BookingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
