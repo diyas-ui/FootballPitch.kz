@@ -19,6 +19,7 @@ target 'FootballPitch.kz' do
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
   
   # Firebase
+  pod 'Firebase/Firestore'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
 

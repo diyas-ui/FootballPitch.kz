@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    let viewModel = ProfileViewModel()
+    
     // MARK: - UI Elements
     fileprivate var topView = UIView()
     fileprivate lazy var savedView = StandardShadowView()
@@ -64,7 +66,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.font = .regularPoppins(18)
         label.textColor = .palette(.white)
-        label.text = "Rafael Michael"
+        label.textAlignment = .center
         return label
     }()
     
@@ -72,7 +74,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.font = .regularPoppins(14)
         label.textColor = .palette(.white)
-        label.text = "+7 778 555 44 11"
+        label.textAlignment = .center
         return label
     }()
     
@@ -80,7 +82,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.font = .regularPoppins(14)
         label.textColor = .palette(.white)
-        label.text = "rafael@gmail.com"
+        label.textAlignment = .center
         return label
     }()
     
@@ -105,8 +107,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+        getPlayer()
     }
-    
 }
 
 //MARK: - Actions
@@ -138,6 +140,21 @@ extension ProfileViewController {
 
 //MARK: - Methods
 extension ProfileViewController {
+    private func getPlayer() {
+        viewModel.getPlayer { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.setUser()
+            }
+        }
+    }
+    
+    private func setUser() {
+        nameLabel.text = viewModel.player?.name
+        phoneLabel.text = viewModel.player?.phone
+        mailLabel.text = viewModel.player?.email
+    }
+    
     private func showMessage(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))

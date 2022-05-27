@@ -49,7 +49,7 @@ class PlayersCell: UITableViewCell {
     }
     
     func configureCell(object: PlayersModel) {
-        iconImageView.image = object.icon
+        iconImageView.image = UIImage(named: "icon_image")
         titleLabel.text = object.name
         
         var text: String = ""

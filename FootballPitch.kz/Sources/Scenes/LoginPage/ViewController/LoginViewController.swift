@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FirebaseAuth
+import FirebaseFirestore
 
 enum PageType {
     case login
@@ -122,6 +123,7 @@ extension LoginViewController {
                 return
             }
             
+            self.addUserToFirestore(email: email, uid: result?.user.uid ?? "")
             self.showMessage(title: "Success", message: "You have successfully registered", withType: true)
         }
     }
@@ -136,6 +138,12 @@ extension LoginViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         }
         present(alert, animated: true)
+    }
+    
+    private func addUserToFirestore(email: String, uid: String) {
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(uid).setData(["email": email])
     }
 }
 
