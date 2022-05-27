@@ -9,6 +9,8 @@ import UIKit
 import MaterialComponents
 
 class EditProfileViewController: UIViewController {
+            
+    let viewModel = EditProfileViewModel()
     
     private var skillLevels: [SkillLevelEnum] = [.beginner, .intermediate, .upper_intermediate, .advanced]
     private var footArray: [FootEnum] = [.right, .left]
@@ -47,14 +49,6 @@ class EditProfileViewController: UIViewController {
         let textField = MDCOutlinedTextField()
         textField.label.text = "Phone number"
         textField.keyboardType = .numberPad
-        textField.sizeToFit()
-        return textField
-    }()
-    
-    private let emailTextField: MDCOutlinedTextField = {
-        let textField = MDCOutlinedTextField()
-        textField.placeholder = "Email"
-        textField.label.text = "Email"
         textField.sizeToFit()
         return textField
     }()
@@ -112,11 +106,66 @@ class EditProfileViewController: UIViewController {
         button.height(constant: 40)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
+        getPlayer()
+    }
+}
+
+//MARK: - Methods
+extension EditProfileViewController {
+    private func getPlayer() {
+        viewModel.getPlayer { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.setUserData()
+            }
+        }
+    }
+    
+    private func setUserData() {
+        fullNameTextField.text = viewModel.player?.name
+        phoneTextField.text = viewModel.player?.phone
+        skillTextField.text = viewModel.player?.skillLevel
+        footTextField.text = viewModel.player?.strongFoot
+        
+        if let height = viewModel.player?.height {
+            heightTextField.text = "\(height)"
+        }
+        
+        if let weight = viewModel.player?.weight {
+            weightTextField.text = "\(weight)"
+        }
+        
+        var text: String = ""
+        if let positions = viewModel.player?.positions {
+            for (index, value) in positions.enumerated() {
+                if index == 0 {
+                    text += value
+                } else {
+                    text += ", \(value)"
+                }
+            }
+            
+            positionTextField.text = text
+        }
+    }
+    
+    private func saveUserData() {
+        var positions: [String] = []
+        if let text = positionTextField.text {
+            positions = text.components(separatedBy: ", ")
+            print(positions)
+        }
+        
+        viewModel.setProfileData(name: fullNameTextField.text, phone: phoneTextField.text, positions: positions, skillLevel: skillTextField.text, strongFoot: footTextField.text, weight: weightTextField.text, height: heightTextField.text)
+        
+        DispatchQueue.main.async {
+            self.getPlayer()
+        }
     }
 }
 
@@ -128,6 +177,7 @@ extension EditProfileViewController {
     
     @objc func handleSaveButton() {
         dismissKeyboard()
+        saveUserData()
     }
 }
 
@@ -202,7 +252,7 @@ extension EditProfileViewController: CodeDesignable {
     
     func setupStackView() {
         scrollView.alwaysBounceVertical = true
-        [profileImageView, fullNameTextField, phoneTextField, emailTextField, positionTextField, skillTextField, footTextField, heightTextField, weightTextField, saveButton].forEach {
+        [profileImageView, fullNameTextField, phoneTextField, positionTextField, skillTextField, footTextField, heightTextField, weightTextField, saveButton].forEach {
             stackView.addArrangedSubview($0)
         }
     }
@@ -270,7 +320,7 @@ extension EditProfileViewController {
     }
     
     private func getTextFields() -> [MDCOutlinedTextField] {
-        return [fullNameTextField, phoneTextField, emailTextField, positionTextField, skillTextField, footTextField, heightTextField, weightTextField]
+        return [fullNameTextField, phoneTextField, positionTextField, skillTextField, footTextField, heightTextField, weightTextField]
     }
     
     private func setPickerViews(field: MDCOutlinedTextField, view: ToolbarPickerView, tag: Int) {

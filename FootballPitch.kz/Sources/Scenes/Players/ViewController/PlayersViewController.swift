@@ -9,15 +9,7 @@ import UIKit
 
 class PlayersViewController: UIViewController {
     
-    private var allPlayers: [PlayersModel] = []
-    private var players: [PlayersModel] = [
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Azamat Sharapat", positions: ["Left defender", "Center back"], email: "sharapattt@gmail.com", phone: "87781234567", skillLevel: "Legend", strongFoot: "Right", weight: 75, height: 180),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Agmanov Diyas", positions: ["Right defender", "Midfielder"], email: "agmanovd@gmail.com", phone: "87781234567", skillLevel: "Amateur", strongFoot: "Right", weight: 62, height: 180),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Kupesov Madi", positions: ["Left Winger", "Striker"], email: "kupesovm@gmail.com", phone: "87781234567", skillLevel: "Beginner", strongFoot: "Right", weight: 70, height: 170),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Sagyngali Adylet", positions: ["Left defender"], phone: "87781234567", weight: 75, height: 180),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Imangazin Akzhol", positions: ["Midfielder"], email: "imangazinjr@gmail.com", skillLevel: "Advanced", strongFoot: "Right"),
-        PlayersModel(icon: UIImage(named: "icon_image"), name: "Khametov Dauren", positions: ["Left defender", "Midfielder", "Left Winger", "Striker", "Right Winger"], email: "khametovd@gmail.com", phone: "87781234567", skillLevel: "Advanced", strongFoot: "Right", weight: 70, height: 180)
-    ]
+    let viewModel = PlayersViewModel()
     
     private var titleLabel: UILabel = {
         let label = UILabel()
@@ -47,17 +39,27 @@ class PlayersViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        getAllPlayers()
     }
 }
 
 //MARK: - Methods
 extension PlayersViewController {
+    func getAllPlayers() {
+        viewModel.getAllPlayers { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     @objc func didChangeText() {
         if let text = searchTextField.text {
             if text == "" {
-                players = allPlayers
+                viewModel.players = viewModel.allPlayers
             } else {
-                players = allPlayers.filter({ player in
+                viewModel.players = viewModel.allPlayers.filter({ player in
                     if let name = player.name {
                         return name.contains(text)
                     }
@@ -72,7 +74,7 @@ extension PlayersViewController {
     
     func openDetailPlayers(index: Int) {
         let vc = DetailPlayersViewController()
-        vc.player = players[index]
+        vc.player = viewModel.players[index]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -80,12 +82,12 @@ extension PlayersViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension PlayersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return viewModel.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(PlayersCell.self, indexPath: indexPath)
-        cell.configureCell(object: players[indexPath.row])
+        cell.configureCell(object: viewModel.players[indexPath.row])
         return cell
     }
     
@@ -102,7 +104,6 @@ extension PlayersViewController: UITableViewDelegate, UITableViewDataSource {
 extension PlayersViewController: CodeDesignable {
     func setupViews() {
         view.backgroundColor = .palette(.lightGrey)
-        allPlayers = players
         
         [topView, searchTextField, tableView].forEach {
             view.addSubview($0)

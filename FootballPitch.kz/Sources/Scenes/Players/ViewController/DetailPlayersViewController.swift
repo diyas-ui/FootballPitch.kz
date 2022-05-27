@@ -96,9 +96,7 @@ extension DetailPlayersViewController {
             nameLabel.text = name
         }
         
-        if let icon = player.icon {
-            iconImageView.image = icon
-        }
+        iconImageView.image = UIImage(named: "icon_image")
         
         if let email = player.email {
             let emailField = LeftRightLabelsView()

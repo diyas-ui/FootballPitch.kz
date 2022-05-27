@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 struct PlayersModel {
-    var icon: UIImage?
     var name: String?
     var positions: [String]?
     var email: String?
