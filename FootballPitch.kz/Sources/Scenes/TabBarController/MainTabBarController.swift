@@ -63,7 +63,7 @@ extension MainTabBarController {
         playersVC.title = ""
         playersVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_players_icon").withRenderingMode(.alwaysTemplate), tag: 1)
         let playersNC = UINavigationController(rootViewController: playersVC)
-
+        
         let mapVC = MapViewController()
         mapVC.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "tabBar_location_icon").withRenderingMode(.alwaysTemplate), tag: 2)
         let mapNC = UINavigationController(rootViewController: mapVC)
