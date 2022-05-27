@@ -11,7 +11,7 @@ import GoogleMaps
 import GoogleMapsUtils
 
 class MapViewController: UIViewController {
-    
+
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiboldPoppins(24)
